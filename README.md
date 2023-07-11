@@ -1,3 +1,2 @@
-# Namaste-React
+# Namaste-React 🚀
 Learning React
-Test React
