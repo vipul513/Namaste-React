@@ -1,0 +1,93 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* CSS for header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    background-color:black ;
+    padding: 0px 0px;
+    width: 100%;
+    height: 110px;
+}
+
+.logo > img {
+    height: 100%;
+    width: 90%;
+    margin: 0px 5px;
+    border-radius: 80%;
+}
+
+.navbar {
+    padding:  45px 100px 10px 0px;
+}
+
+.nav-items {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-item {
+    margin: 0 25px;
+}
+
+.nav-item > a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(232, 190, 139);
+    font-weight: 500;
+    font-family: sans-serif;
+}
+
+/* CSS for body */
+.body {
+    background-color: cadetblue;
+}
+
+.search {
+    width: 100%;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.res-card {
+    width: 15%;
+    height: 380px;
+    margin: 5px 20px;
+    background-color:darkcyan;
+    border-radius: 5%;
+}
+
+.res-card:hover {
+    border-radius: 5%;
+    cursor: pointer;
+    transition: 0.2s ease;
+    background-color: #1aadac;
+}
+
+.res-logo > img {
+    width: 100%;
+    height: 200px;
+    border-radius: 5%;
+}
+
+.res-details {
+    margin: 10px 5px;
+}
+
+.res-details > h4 {
+    margin: 5px 5px;
+}
+
+.res-name {
+    color: rgb(232, 190, 139);
+}
+
