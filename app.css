@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
-    background-color:black ;
+    background-color:cadetblue ;
     padding: 0px 0px;
     width: 100%;
     height: 110px;
@@ -75,7 +75,7 @@
 
 .res-logo > img {
     width: 100%;
-    height: 200px;
+    height: 170px;
     border-radius: 5%;
 }
 
