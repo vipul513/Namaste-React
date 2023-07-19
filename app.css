@@ -91,3 +91,14 @@
     color: rgb(232, 190, 139);
 }
 
+.btn {
+    margin: 10px 20px;
+    font-size: 12px;
+    border-radius: 1px solid black;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: gray;
+}
