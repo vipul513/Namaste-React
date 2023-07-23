@@ -1,0 +1,22 @@
+.container {
+    padding-bottom: 20px;
+}
+.accordion-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background-color: lightgray;
+    height: 8px;
+    align-items: center;
+    border-radius: 5px;
+
+}
+
+.accordion-content {
+    padding: 20px 20px;
+}
+
+.category-gap {
+    background-color: white;
+    height: 20px;
+}
