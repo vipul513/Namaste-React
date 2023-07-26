@@ -11,15 +11,15 @@ export const Body = () => {
     fetchData();
   }, []);
 
-  console.log("Body render");
   const fetchData = async () => {
     const data = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&page_type=DESKTOP_WEB_LISTING`
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP`
     );
     const json = await data.json();
+    console.log(json?.data?.cards[5]?.card?.card?.gridElements);
     // Optional Chaining
-    setListOfRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+    setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements.infoWithStyle.restaurants);
+    setFilteredRestaurant(json?.data?.cards[5]?.card?.card?.gridElements.infoWithStyle.restaurants);
   };
 
   return (
@@ -50,7 +50,7 @@ export const Body = () => {
           className="btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (res) =>  res.data.avgRating > 3
+              (res) =>  res.info.avgRating > 3
             );
             setFilteredRestaurant(filteredList);
           }}
@@ -60,8 +60,9 @@ export const Body = () => {
       </div>
       <div className="res-container">
           {filteredRestaurant.map((restaurant) => (
-             <Link to = {"/restaurant/" + restaurant.data.id}>
-              <RestaurantCard key={restaurant.data.id} resData={restaurant} />
+              console.log(restaurant.info.id),
+             <Link key={restaurant.info.id} to = {"/restaurant/" + restaurant.info.id}>
+              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
               </Link>
           ))}
       </div>

@@ -7,8 +7,8 @@ export const RestaurantCard = (props) => {
     avgRating,
     cuisines,
     costForTwo,
-    deliveryTime,
-  } = resData?.data;
+    sla,
+  } = resData?.info;
   let resLogoURL = LOGO_URL + cloudinaryImageId;
   return (
     <div className="res-card">
@@ -19,8 +19,8 @@ export const RestaurantCard = (props) => {
         <h3 className="res-name"> {name} </h3>
         <h4> {"⭐️ " + avgRating} </h4>
         <h4> {cuisines.join(", ")} </h4>
-        <h4> {"Cost for Two:- ₹" + costForTwo / 100} </h4>
-        <h4> {"Estimate Time:- " + deliveryTime} </h4>
+        <h4> {costForTwo } </h4>
+        <h4> {"Estimate Time:- " + sla.slaString} </h4>
       </div>
     </div>
   );

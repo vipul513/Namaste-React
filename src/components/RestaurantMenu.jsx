@@ -8,6 +8,8 @@ import { TbCoinRupee } from "react-icons/Tb";
 import { useEffect, useState } from "react";
 import { MENU_API } from "../fixtures/constant.js";
 import { useParams } from "react-router-dom";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export const RestaurantMenu = () => {
   const {resId} = useParams();

@@ -259,12 +259,13 @@ svg {
 
 .item-details {
     margin: 10px 0px;
+    width: 80%;
 }
 
 .item-img > img {
     padding-top: 10px;
     height: 80px;
-    width: 80px;
+    width: 100px;
 }
 
 .item-gap {
@@ -287,6 +288,5 @@ svg {
     display: flex;
     align-items: center;
 }
-
 
 
