@@ -9,47 +9,47 @@ import { IoMdArrowDropdown } from "react-icons/Io";
 
 export const Header = () => {
   return (
-    <div className="header">
-      <div className="header-wrapper">
-        <div className="logo">
-          <img alt="app-logo" src={HEADER_LOGO}></img>
+    <div className="header h-20 flex justify-between bg-cadetblue">
+      <div className="flex justify-evenly">
+        <div className="w-20 h-20  ml-20">
+          <img className="rounded-full" alt="app-logo" src={HEADER_LOGO}></img>
         </div>
-        <div className="change-location">
-          <h4 className="other"> Other </h4>
-          <h4 className="city"> New Delhi, India </h4>
+        <div className=" flex items-center p-10">
+          <h4 className="m-1 border-b-2 border-black text-sm font-bold"> Other </h4>
+          <h4 className="m-1 text-yellow-light text-sm"> New Delhi, India </h4>
           <IoMdArrowDropdown />
         </div>
       </div>
-      <div className="navbar">
-        <ul className="nav-items">
-          <li className="nav-item">
-            <Link to="/">
+      <div className="flex items-center">
+        <ul className="flex items-center mr-12">
+          <li className="mr-10">
+            <Link className="flex hover:text-yellow-light items-center" to="/">
               <BiSearch />
-              Search
+              <span className="ml-[3px]">Search</span>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/contact">
+          <li className="mr-10">
+            <Link className="flex hover:text-yellow-light items-center"  to="/contact">
               <BiSolidOffer />
-              Offers
+              <span className="ml-[3px]">Offers</span>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/about">
+          <li className="mr-10">
+            <Link className="flex hover:text-yellow-light items-center" to="/about">
               <IoMdHelpBuoy />
-              Help
+              <span className="ml-[3px]">Help</span>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/cart">
+          <li className="mr-10">
+            <Link className="flex hover:text-yellow-light items-center"  to="/cart">
               <FaUser />
-              Sign In
+              <span className="ml-[3px]">Sign In</span>
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/cart">
+          <li className="mr-10">
+            <Link className="flex hover:text-yellow-light items-center"  to="/cart">
               <LuShoppingCart />
-              Cart
+              <span className="ml-[3px]">Cart</span>
             </Link>
           </li>
         </ul>

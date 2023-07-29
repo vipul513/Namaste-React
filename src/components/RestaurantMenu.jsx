@@ -11,7 +11,6 @@ export const RestaurantMenu = () => {
   const resInfo = useRestaurantsMenu(resId);
 
   if (resInfo === null) return <h4> No data</h4>;
-  console.log(resInfo?.cards[1]?.card?.card?.gridElements)
   const offerCards =
     resInfo?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.offers;
 
@@ -26,20 +25,20 @@ export const RestaurantMenu = () => {
     );
 
   return (
-    <div className="res-menu">
+    <div className="res-menu bg-white w-[1000px] mx-[200px] pl-1">
       <RestaurantDetails data={resInfo?.cards[0]?.card?.card?.info} />
 
-      <div className="offers">
+      <div className="offers flex mt-4 overflow-auto">
         {offerCards.map((offer) => (
           <MenuOfferCard key={offer.info.offerIds[0]} props={offer} />
         ))}
       </div>
 
-      <div className="food-preference">
+      <div className="food-preference mt-10 pl-2 border-b-2 border-solid border-gray-200">
         <ToggleSwitch label="Veg Only" />
       </div>
 
-      <div className="menu-items">
+      <div className="menu-items mt-10">
         {categories.map((cat, index) => (
           <Accordion
             key={index}

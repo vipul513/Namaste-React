@@ -1,3 +1,4 @@
+/* 
 * {
     margin: 0px;
     padding: 0px;
@@ -5,7 +6,7 @@
 }
 
 /* CSS for header */
-.header {
+/* .header {
     display: flex;
     justify-content: space-between;
     background-color:cadetblue ;
@@ -76,7 +77,7 @@
 }
 
 /* CSS for body */
-.body {
+/* .body {
     background-color: rgb(228, 182, 98);
     width: 100%;
     padding: 0px 140px;
@@ -155,7 +156,7 @@ input {
 
 
 /*  restaurant menu */
-.res-menu {
+/* .res-menu {
     background-color: rgb(255, 255, 255);
     margin-left: 270px;
     width: 60%;
@@ -319,5 +320,4 @@ svg {
     display: flex;
     align-items: center;
 }
-
-
+ */

@@ -12,7 +12,7 @@ const Body = () => {
   useEffect(() => {
     const json = useRestaurants();
     json.then((res) => {
-      const data = res?.data?.cards[5]?.card?.card?.gridElements.infoWithStyle.restaurants
+      const data = res?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       // Optional Chaining
       setListOfRestaurants(data);
       setFilteredRestaurant(data);
@@ -22,18 +22,18 @@ const Body = () => {
   if (filteredRestaurant === undefined || filteredRestaurant.length === 0) return <Shimmer />;
 
   return (
-    <div className="body">
-      <div className="filter">
-        <div className="search-container">
+    <div className="w-auto mx-32">
+      <div className="flex my-5">
+        <div className="">
           <input
             type="text"
-            className="serach-input"
-            placeholder="Search"
+            className="border-2 border-black "
+            placeholder=" Search "
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           ></input>
           <button
-            className="btn"
+            className="rounded-lg m-2 bg-cyan-600 px-2 py-1"
             onClick={() => {
               const filteredList = filteredRestaurant.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -46,7 +46,7 @@ const Body = () => {
         </div>
         <button
           id="filter-btn"
-          className="btn"
+          className="rounded-lg m-2 bg-cyan-600 px-2 py-1"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
@@ -57,11 +57,12 @@ const Body = () => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap">
         {filteredRestaurant.map(
           (restaurant) => (
             (
               <Link
+                className="bg-cadetblue rounded-lg mx-3 my-5 h-[270px]"
                 key={restaurant.info.id}
                 to={"/restaurant/" + restaurant.info.id}
               >

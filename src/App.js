@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => (
-    <div className="app">
+    <div className="app bg-yellow-light overflow-hidden">
         <Header />
         <Outlet />
     </div>
