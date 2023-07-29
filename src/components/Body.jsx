@@ -1,26 +1,24 @@
 import { RestaurantCard } from "./RestaurantCard";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, json } from "react-router-dom";
+import { useRestaurants } from "../utils/hooks/useRestaurants";
 
-export const Body = () => {
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+const Body = () => {
   const [searchText, setSearchText] = useState([]);
+  const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    const json = useRestaurants();
+    json.then((res) => {
+      const data = res?.data?.cards[4]?.card?.card?.gridElements.infoWithStyle.restaurants
+      // Optional Chaining
+      setListOfRestaurants(data);
+      setFilteredRestaurant(data);
+    });
+  }, [json]);
 
-  const fetchData = async () => {
-    const data = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP`
-    );
-    const json = await data.json();
-    console.log(json?.data?.cards[5]?.card?.card?.gridElements);
-    // Optional Chaining
-    setListOfRestaurants(json?.data?.cards[5]?.card?.card?.gridElements.infoWithStyle.restaurants);
-    setFilteredRestaurant(json?.data?.cards[5]?.card?.card?.gridElements.infoWithStyle.restaurants);
-  };
+  if (filteredRestaurant === undefined) return <h4>No data</h4>;
 
   return (
     <div className="body">
@@ -36,10 +34,10 @@ export const Body = () => {
           <button
             className="btn"
             onClick={() => {
-                const filteredList = filteredRestaurant.filter((res) =>
-                  res.data.name.toLowerCase().includes(searchText.toLowerCase())
-                );
-                setFilteredRestaurant(filteredList);
+              const filteredList = filteredRestaurant.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setFilteredRestaurant(filteredList);
             }}
           >
             Search
@@ -50,7 +48,7 @@ export const Body = () => {
           className="btn"
           onClick={() => {
             const filteredList = listOfRestaurants.filter(
-              (res) =>  res.info.avgRating > 3
+              (res) => res.info.avgRating > 4
             );
             setFilteredRestaurant(filteredList);
           }}
@@ -59,13 +57,21 @@ export const Body = () => {
         </button>
       </div>
       <div className="res-container">
-          {filteredRestaurant.map((restaurant) => (
-              console.log(restaurant.info.id),
-             <Link key={restaurant.info.id} to = {"/restaurant/" + restaurant.info.id}>
-              <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+        {filteredRestaurant.map(
+          (restaurant) => (
+            (
+              <Link
+                key={restaurant.info.id}
+                to={"/restaurant/" + restaurant.info.id}
+              >
+                <RestaurantCard key={restaurant.info.id} resData={restaurant} />
               </Link>
-          ))}
+            )
+          )
+        )}
       </div>
     </div>
   );
 };
+
+export default Body;
