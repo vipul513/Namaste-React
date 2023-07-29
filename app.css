@@ -12,7 +12,10 @@
     padding: 0px 0px;
     width: 100%;
     height: 90px;
-    margin-bottom: 10px;
+}
+
+.header-wrapper {
+    display: flex;
 }
 
 .logo > img {
@@ -22,8 +25,25 @@
     border-radius: 50%;
 }
 
+.change-location {
+    display: flex;
+    align-items: center;
+}
+
+.change-location h4 {
+    margin-right: 10px;
+}
+
+.other {
+    border-bottom: 2px solid black;
+}
+
+.city {
+    color: rgb(228, 182, 98);
+}
+
 .navbar {
-    padding:  30px 70px 10px 0px;
+    padding:  20px 100px 10px 0px;
 }
 
 .nav-items {
@@ -31,23 +51,28 @@
     display: flex;
 }
 
-.nav-item {
-    margin: 0 10px;
-    padding: 10px 10px 0px 10px;
+.nav-item svg {
+    font-size: 21px;
 }
 
-.nav-item:hover {
-    border-radius:  5px;
-    background-color: rgb(228, 182, 98);
+.nav-item {
+    margin: 0 10px;
+    padding: 10px 15px 0px 10px;
+}
+
+.nav-item > a:hover {
+    color: rgb(228, 182, 98);
     transition: 0.3s ease;
 }
 
 .nav-item > a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 17px;
     color: black;
     font-weight: 800;
     font-family: sans-serif;
+    display: flex;
+    align-items: center;
 }
 
 /* CSS for body */
@@ -137,6 +162,7 @@ input {
 }
 
 .menu-details {
+    margin-top: 10px;
     padding: 10px;
     height: 130px;
 }
@@ -250,6 +276,10 @@ svg {
 
 .menu-items {
     margin-top: 10px;
+}
+
+.menu-card {
+    cursor: pointer;
 }
 
 .menu-wrapper {

@@ -1,0 +1,44 @@
+.shimmer-card {
+    border-radius: 5%;
+    height: 350px;
+    width: 250px;
+    background-color: cadetblue;
+}
+
+.shimmer-container {
+    background-color: rgb(228, 182, 98);
+    height: 800px;
+    width: 100%;
+    padding: 0px 140px;
+    overflow: hidden;
+}
+
+.shimmer-body {
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.shimmer-card {
+    margin-right: 40px;
+}
+
+.lines-wrapper {
+    margin-top: 100px;
+}
+
+.lines {
+    margin-top: 20px;
+    width: 200px;
+    height: 5px;
+    border-radius: 10px;
+    background: darkgray;
+    position: relative;
+    animation: mymove infinite;
+    animation-duration: 1s;
+}
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 300px;}
+}

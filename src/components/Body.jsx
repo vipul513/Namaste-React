@@ -2,6 +2,7 @@ import { RestaurantCard } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import { Link, json } from "react-router-dom";
 import { useRestaurants } from "../utils/hooks/useRestaurants";
+import Shimmer from "../utils/Shimmer/Shimmer";
 
 const Body = () => {
   const [searchText, setSearchText] = useState([]);
@@ -11,14 +12,14 @@ const Body = () => {
   useEffect(() => {
     const json = useRestaurants();
     json.then((res) => {
-      const data = res?.data?.cards[4]?.card?.card?.gridElements.infoWithStyle.restaurants
+      const data = res?.data?.cards[5]?.card?.card?.gridElements.infoWithStyle.restaurants
       // Optional Chaining
       setListOfRestaurants(data);
       setFilteredRestaurant(data);
     });
   }, [json]);
-
-  if (filteredRestaurant === undefined) return <h4>No data</h4>;
+  console.log(filteredRestaurant);
+  if (filteredRestaurant === undefined || filteredRestaurant.length === 0) return <Shimmer />;
 
   return (
     <div className="body">
