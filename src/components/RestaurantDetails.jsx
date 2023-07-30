@@ -18,21 +18,21 @@ export const RestaurantDetails = (props) => {
     <>
       <div className="menu-details flex justify-between py-3 border-b-2 border-dashed border-gray-300">
         <div className="restaurant m-2">
-          <h2 className="name"> {name} </h2>
-          <h4>{cuisines}</h4>
-          <h4> {locality + ", " + city} </h4>
-          <h4> Notes </h4>
+          <h2 className="name text-lg font-bold"> {name} </h2>
+          <h4 className="text-gray-500 text-sm space-y-2">{cuisines}</h4>
+          <h4 className="text-gray-500 text-sm space-y-2"> {locality + ", " + city} </h4>
+          <h4 className="text-gray-500 text-sm space-y-2"> Notes </h4>
         </div>
         <div className="res-rating mr-8 mt-5 border-2 border-solid border-gray-300 h-20 rounded-md">
-          <div className="rating flex items-center mb-1 p-2 border-b-2 border-dashed border-gray-300">
+          <div className="rating flex items-center mb-1 p-2 border-b-2 border-solid border-gray-300">
             <AiFillStar className="text-green-600 m-1" />
-            <h6> {avgRatingString} </h6>
+            <h6 className="font-bold text-base"> {avgRatingString} </h6>
           </div>
-          <h3 className="rating-count text-xs"> {totalRatingsString} </h3>
+          <h3 className="rating-count text-xs font-bold"> {totalRatingsString} </h3>
         </div>
       </div>
 
-      <div className="estimates flex items-center  mx-1 my-1">
+      <div className="estimates flex items-center  mx-1 my-1 font-bold text-sm">
         <div className="time flex items-center mr-3">
           <FiClock className="mx-1" />
           <h4> {sla.slaString} </h4>

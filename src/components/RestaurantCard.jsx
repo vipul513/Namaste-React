@@ -11,9 +11,10 @@ export const RestaurantCard = (props) => {
     costForTwo,
     sla,
   } = resData?.info;
+
   let resLogoURL = LOGO_URL + cloudinaryImageId;
   return (
-    <div className="res-card w-[250px]">
+    <div className="res-card w-[250px] shadow-sm">
       <div className="res-logo rounded-xl">
         <img className="rounded-xl" alt="JC Cafe" src={resLogoURL}></img>
       </div>
@@ -22,8 +23,6 @@ export const RestaurantCard = (props) => {
         <h4> {"⭐️ " + avgRating} </h4>
         <h4 className="text-ellipsis overflow-hidden whitespace-nowrap text-sm text-gray-700"> {cuisines.join(", ")} </h4>
         <h4 className="text-sm text-gray-700">{areaName}</h4>
-        {/* <h4> {costForTwo } </h4> */}
-        {/* <h4> {"Estimate Time:- " + sla.slaString} </h4> */}
       </div>
     </div>
   );

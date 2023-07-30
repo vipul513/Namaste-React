@@ -18,11 +18,11 @@ const Body = () => {
       setFilteredRestaurant(data);
     });
   }, [json]);
-  console.log(filteredRestaurant);
+
   if (filteredRestaurant === undefined || filteredRestaurant.length === 0) return <Shimmer />;
 
   return (
-    <div className="w-auto mx-32">
+    <div className="w-[1200px] m-auto">
       <div className="flex my-5">
         <div className="">
           <input

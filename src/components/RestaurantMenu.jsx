@@ -1,10 +1,9 @@
-import { Accordion } from "../utils/accordion/Accordion.jsx";
 import ToggleSwitch from "../utils/toggleButton/ToggleSwitch.jsx";
 import { MenuOfferCard } from "./MenuOfferCard";
-import { MenuCategory } from "./MenuCategory.jsx";
 import { useParams } from "react-router-dom";
 import { RestaurantDetails } from "./RestaurantDetails.jsx";
 import useRestaurantsMenu from "../utils/hooks/useRestaurantMenu.js";
+import {MenuCategory} from "./MenuCategory"
 
 export const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -25,7 +24,7 @@ export const RestaurantMenu = () => {
     );
 
   return (
-    <div className="res-menu bg-white w-[1000px] mx-[200px] pl-1">
+    <div className="res-menu bg-white w-[800px] mx-auto pl-1">
       <RestaurantDetails data={resInfo?.cards[0]?.card?.card?.info} />
 
       <div className="offers flex mt-4 overflow-auto">
@@ -34,17 +33,13 @@ export const RestaurantMenu = () => {
         ))}
       </div>
 
-      <div className="food-preference mt-10 pl-2 border-b-2 border-solid border-gray-200">
+      <div className="food-preference mt-10 pb-5 pl-2 border-b-2 border-solid border-gray-200 text-sm font-bold">
         <ToggleSwitch label="Veg Only" />
       </div>
 
-      <div className="menu-items mt-10">
+      <div className="menu-items mt-5 pb-1 pr-1">
         {categories.map((cat, index) => (
-          <Accordion
-            key={index}
-            title={cat.card.card.title}
-            content={<MenuCategory props={cat.card.card.itemCards} />}
-          />
+          <MenuCategory className="mb-1" key={index} menu={cat.card.card}/>
         ))}
       </div>
 

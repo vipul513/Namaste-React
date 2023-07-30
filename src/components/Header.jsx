@@ -16,8 +16,8 @@ export const Header = () => {
         </div>
         <div className=" flex items-center p-10">
           <h4 className="m-1 border-b-2 border-black text-sm font-bold"> Other </h4>
-          <h4 className="m-1 text-yellow-light text-sm"> New Delhi, India </h4>
-          <IoMdArrowDropdown />
+          <h4 className="m-1 text-gray-300 text-sm font-bold"> New Delhi, India </h4>
+          <IoMdArrowDropdown className="text-yellow-light text-2xl" />
         </div>
       </div>
       <div className="flex items-center">
